@@ -11,3 +11,7 @@ Imported the necessary libraries, such as NLTK and PyTorch, and are ready to tra
 After the training process along with other necessary information, was saved to a file named "data.pth." In this runtime script, the trained model is loaded, and the chatbot enters a chat loop. The user can input messages, and the chatbot processes them using the trained model to generate responses. The chatbot utilizes a bag-ofwords approach to convert user input into a numerical representation, and the trained neural network predicts the intent of the input. If the predicted intent has a high probability and meets a certain confidence threshold, the chatbot randomly selects a response associated with that intent from the training data. If the confidence is below the threshold or the intent is not recognized well, the chatbot responds with a default message indicating a lack of understanding. The chatbot continues to prompt the user for input until the user types "quit," ending the chat.
 
 ![image](https://github.com/czh001118/ISSUE-RESOLVING-CHATBOT-FOR-BOOKING-AND-RESERVING-HOTEL-ROOMS/assets/64961112/67532120-dce0-49ff-8d32-1d681cb73bb6)
+
+## Usability Testing
+
+![image](https://github.com/czh001118/ISSUE-RESOLVING-CHATBOT-FOR-BOOKING-AND-RESERVING-HOTEL-ROOMS/assets/64961112/59d4a32b-e75f-434e-ab2a-2c8d5cc29ff4)
