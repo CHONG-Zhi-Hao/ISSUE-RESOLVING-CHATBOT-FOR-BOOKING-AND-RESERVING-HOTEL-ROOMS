@@ -1,0 +1,99 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi",
+        "hihi",
+        "haha",
+        "Hey",
+        "Yo",
+        "How are you",
+        "Is anyone there?",
+        "Hello",
+        "Good day"
+      ],
+      "responses": [
+        "Hey :-)",
+        "Hello, How can I help you?",
+        "Hi there, what can I do for you?",
+        "Hi there, how can I help?"
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": [
+        "Bye", 
+        "See you later",
+        "byebye",
+        "im done",
+        "ok",
+        "Goodbye"
+      ],
+      "responses": [
+        "See you later, thanks for visiting",
+        "Have a nice day",
+        "Bye! Come back again soon."
+      ]
+    },
+    {
+      "tag": "thanks",
+      "patterns": ["Thanks", "Thank you", "That's helpful", "Thank's a lot!"],
+      "responses": ["Happy to help!", "Any time!", "My pleasure"]
+    },
+    {
+      "tag": "Room Selection",
+      "patterns": [
+        "What types of rooms are available?",
+        "types of rooms",
+        "I want book a room",
+        "What types of rooms you have?",
+        "I want book a hotel",
+        "room",
+        "book room"
+      ],
+      "responses": [
+        "We have single, double and suite size room for you to select."
+      ]
+    },
+    {
+      "tag": "Room Facilities",
+      "patterns": [
+        "facilities",
+        "Tell me about the facilities in the rooms.",
+        "What types of facilities you have?",
+        "I want to know about facilities",
+        "types of facilities",
+        "facilities in the rooms"
+      ],
+      "responses": [
+        "Our rooms come with standard amenities, including free Wi-Fi and a flat-screen TV."
+      ]
+    },
+    {
+      "tag": "Booking Assistance",
+      "patterns": [
+        "What information do you need to book a room?",
+        "what info you need",
+        "info",
+        "information"
+      ],
+      "responses": [
+        "We need your name, contact number, email, Check-In date, Check-Out date and your special request if any."
+      ]
+    },
+    {
+      "tag": "Check-In and Check-Out",
+      "patterns": [
+        "What is the check in and check out times?",
+        "check in",
+        "check out",
+        "check in time",
+        "check out time"
+      ],
+      "responses": [
+        "We recommend you to check-in by 3.00p.m. and check-out by 11p.m."
+      ]
+    }
+  ]
+}
