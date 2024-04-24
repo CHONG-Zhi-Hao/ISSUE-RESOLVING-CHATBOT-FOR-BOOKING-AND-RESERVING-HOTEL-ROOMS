@@ -13,7 +13,7 @@ This repo currently contains the starter files.
 
 Clone repo and create a virtual environment
 ```
-$ git clone https://github.com/czh001118/ISSUE-RESOLVING-CHATBOT-FOR-BOOKING-AND-RESERVING-HOTEL-ROOMS.git
+$ git clone https://github.com/CHONG-Zhi-Hao/ISSUE-RESOLVING-CHATBOT-FOR-BOOKING-AND-RESERVING-HOTEL-ROOMS.git
 $ cd chatbot
 $ python3 -m venv venv
 $ . venv/bin/activate
