@@ -1,0 +1,24 @@
+<!-- templates/confirmation.html -->
+{% extends 'base.html' %}
+
+{% block title %}Booking Confirmation{% endblock %}
+
+{% block content %}
+    <div class="container mt-5">
+        <div class="card border-dark mx-auto" style="max-width: 600px;">
+            <div class="card-header bg-dark text-white">
+                <h1 class="display-4">Booking Confirmation</h1>
+            </div>
+            <div class="card-body">
+                <p class="lead">Dear {{ booking['guest_name'] }},</p>
+                <p class="mb-0">We are pleased to confirm your reservation at {{ booking['hotel']['name'] }}.</p>
+                <p class="mb-0">Check-in Date: {{ booking['checkin_date'] }}</p>
+                <p class="mb-0">Check-out Date: {{ booking['checkout_date'] }}</p>
+                <p>Your comfort is our priority, and we look forward to hosting you!</p>
+            </div>
+            <div class="card-footer bg-transparent border-dark text-right">
+                <a href="{{ url_for('home') }}" class="btn btn-outline-dark">Back to Home</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

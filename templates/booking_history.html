@@ -1,0 +1,30 @@
+<!-- templates/booking_history.html -->
+{% extends 'base.html' %}
+
+{% block title %}Booking History{% endblock %}
+
+{% block content %}
+    <div class="container mt-5">
+        <h1 class="display-4 mb-4">Booking History</h1>
+        <div class="list-group">
+            {% if bookings %}
+                {% for booking in bookings %}
+                    <div class="list-group-item">
+                        <h5 class="mb-3">{{ booking['hotel']['name'] }}</h5>
+                        <p class="mb-2"><strong>Guest Name:</strong> {{ booking['guest_name'] }}</p>
+                        <p class="mb-2"><strong>Email:</strong> {{ booking['email'] }}</p>
+                        <p class="mb-2"><strong>Phone Number:</strong> {{ booking['phone_number'] }}</p>
+                        <p class="mb-2"><strong>Check-in Date:</strong> {{ booking['checkin_date'] }}</p>
+                        <p class="mb-2"><strong>Check-out Date:</strong> {{ booking['checkout_date'] }}</p>
+                        {% if booking['special_requests'] %}
+                            <p class="mb-2"><strong>Special Requests:</strong> {{ booking['special_requests'] }}</p>
+                        {% endif %}
+                        <a href="{{ url_for('confirmation', booking_id=loop.index0) }}" class="btn btn-primary">View Details</a>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p class="lead">No bookings yet.</p>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

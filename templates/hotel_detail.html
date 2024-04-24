@@ -1,0 +1,53 @@
+<!-- templates/hotel_detail.html -->
+{% extends 'base.html' %}
+
+{% block title %}{{ hotel['name'] }} - Hotel Detail{% endblock %}
+
+{% block content %}
+    <div class="container mt-3"> <!-- Adjusted margin class -->
+        <div id="imageCarousel" class="carousel slide mb-4" data-ride="carousel">
+            <div class="carousel-inner">
+                {% for image in hotel['image'] %}
+                    <div class="carousel-item {% if loop.first %}active{% endif %}">
+                        <img src="{{ url_for('static',  filename='images/' + hotel['image']) }}" class="d-block w-100" alt="Hotel Image">
+                    </div>
+                {% endfor %}
+            </div>
+            <a class="carousel-control-prev" href="#imageCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#imageCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+        <div class="card shadow mt-3"> <!-- Adjusted margin class -->
+            <div class="card-body">
+                <h1 class="card-title display-4">{{ hotel['name'] }}</h1>
+                <p class="lead">{{ hotel['description'] }}
+                    <br>View Location: <a href="{{ url_for('view_location', hotel_id=hotel['id']) }}">Location Map</a>
+                </p>
+                <hr class="my-4">
+                <h5 class="card-subtitle mb-3 text-muted">Amenities:</h5>
+                <ul class="list-unstyled">
+                    {% for amenity in hotel['amenities'] %}
+                        <li><i class="fas fa-check-circle text-success"></i> {{ amenity }}</li>
+                    {% endfor %}
+                </ul>
+                <hr class="my-4">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>
+                        <p class="card-text h4"><strong>Price:</strong> RM{{ hotel['price'] }}/night</p>
+                        {% set discount_rate = 10 %} {# Set your discount rate here #}
+                        <p class="card-text h6 text-muted">Discount Rate: {{ discount_rate }}%</p>
+                        {% set discounted_price = hotel['price'] * (1 - discount_rate / 100) %}
+                        <p class="card-text h5 text-success">Discounted Price: RM{{ discounted_price | round(2) }}/night</p>
+                        <a href="{{ url_for('book', hotel_id=hotel['id']) }}" class="btn btn-primary btn-lg mt-3">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

@@ -1,0 +1,19 @@
+<!-- templates/view_location.html -->
+{% extends 'base.html' %}
+
+{% block title %}View Location - {{ hotel['name'] }}{% endblock %}
+
+{% block content %}
+    <div class="container mt-5">
+        <h1 class="display-4 mb-4">Explore {{ hotel['name'] }}</h1>
+        {% if 'address' in hotel %}
+            <p class="lead">{{ hotel['address'] }}</p>
+            <p class="mt-3">View location on <a href="https://www.google.com/maps/search/?api=1&query={{ hotel['address'] }}" target="_blank">Google Maps</a></p>
+        {% else %}
+            <p class="lead">Location not available.</p>
+        {% endif %}
+        <div class="mt-4">
+            <a href="{{ url_for('home') }}" class="btn btn-secondary">Back to Home</a>
+        </div>
+    </div>
+{% endblock %}
